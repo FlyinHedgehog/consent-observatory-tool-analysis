@@ -1,30 +1,28 @@
-# Ignore everything by default
+# Ignore everything by default and whitelist only the core files we want tracked
 *
 
-# But do not ignore this .gitignore file
+# Keep this gitignore tracked
 !.gitignore
 
-# Whitelist the core files we want in the repo
+# Whitelist the notebook, helper module, and example data directory
 !consent_observatory_run.ipynb
 !notebook_utils.py
 !examples/
 
-# Also whitelist README and requirements
-!README.md
-!requirements.txt
-
 # Keep common metadata out
 .ipynb_checkpoints/
 
-# Ignore outputs and data directories not intended for the repo
+# Ignore other project data and outputs (not tracked)
+consent-observatory.eu/
 outputs/
-consent-observatory.eu/data/completed/
 
-# Ignore Python artifacts
+# Ignore Python artifacts and envs
 __pycache__/
 *.py[cod]
-
-# Ignore environment files
 .env
 env/
 venv/
+
+# Ignore miscellaneous local files
+jobs_root_test/
+old-notebooks/

@@ -1,8 +1,0 @@
-pandas
-requests
-matplotlib
-seaborn
-jupyterpandas>=1.5
-requests>=2.0
-jupyter
-ipykernel
