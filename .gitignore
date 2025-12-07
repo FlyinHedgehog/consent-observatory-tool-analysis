@@ -1,0 +1,26 @@
+# Ignore everything by default
+*
+
+# But do not ignore this .gitignore file
+!.gitignore
+
+# Allow only the main notebook and utilities file at the repo root
+!consent_observatory_run.ipynb
+!notebook_utils.py
+
+# Keep common metadata out
+.ipynb_checkpoints/
+
+# Ignore outputs and data directories
+outputs/
+consent-observatory.eu/data/completed/
+examples/
+
+# Ignore Python artifacts
+__pycache__/
+*.py[cod]
+
+# Ignore environment files
+.env
+env/
+venv/
