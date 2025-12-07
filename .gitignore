@@ -4,17 +4,21 @@
 # But do not ignore this .gitignore file
 !.gitignore
 
-# Allow only the main notebook and utilities file at the repo root
+# Whitelist the core files we want in the repo
 !consent_observatory_run.ipynb
 !notebook_utils.py
+!examples/
+
+# Also whitelist README and requirements
+!README.md
+!requirements.txt
 
 # Keep common metadata out
 .ipynb_checkpoints/
 
-# Ignore outputs and data directories
+# Ignore outputs and data directories not intended for the repo
 outputs/
 consent-observatory.eu/data/completed/
-examples/
 
 # Ignore Python artifacts
 __pycache__/
