@@ -14,7 +14,7 @@ from src.generate_data import load_data
 from src.cookie_analysis import analyze_cookies_and_buttons, save_analysis
 
 
-def list_available_json_files(examples_dir: str = 'examples') -> list:
+def list_available_json_files(examples_dir: str = 'data/examples') -> list:
     """List available JSON files in examples folder, sorted by modification time (newest first)."""
     examples_path = Path(examples_dir)
     if not examples_path.exists():
@@ -30,9 +30,9 @@ def show_menu():
     print("CONSENT OBSERVATORY - DATA ANALYSIS")
     print("="*60)
     
-    data_files = list_available_json_files('examples')
+    data_files = list_available_json_files('data/examples')
     if not data_files:
-        print("[ERROR] No JSON files found in 'examples/' folder!")
+        print("[ERROR] No JSON files found in 'data/examples/' folder!")
         return None
     
     print("\nAvailable data files:")
@@ -75,7 +75,7 @@ def run_analysis(data_file: str, dataset_name: str) -> bool:
     print("-"*60)
     
     # Create dataset-specific output folder
-    output_dir = f'analysis_output/{dataset_name}'
+    output_dir = f'data/output/analysis/{dataset_name}'
     print(f"[...] Saving to: {output_dir}/")
     save_analysis(df_cookies, df_buttons, df_sites, output_dir)
     

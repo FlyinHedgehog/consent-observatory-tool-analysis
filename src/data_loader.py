@@ -57,7 +57,7 @@ def load_any_records(existing_records: List[Dict[str, Any]] = None,
         return existing_records
     
     cwd = Path.cwd()
-    examples_dir = examples_dir or cwd / 'examples'
+    examples_dir = examples_dir or cwd / 'data' / 'examples'
 
     # If specific file requested, load only from that file
     if example_file:

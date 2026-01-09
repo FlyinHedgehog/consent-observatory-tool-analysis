@@ -80,7 +80,7 @@ def extract_json_from_zip(zip_path: Path) -> list:
 
 
 def save_json_to_examples(zip_filename: str, csv_filename: str) -> bool:
-    """Extract JSON from ZIP and save to examples folder with CSV filename in JSONL format."""
+    """Extract JSON from ZIP and save to data/examples folder with CSV filename in JSONL format."""
     try:
         source_zip = Path('consent-observatory.eu') / 'data' / 'completed' / zip_filename
         
@@ -97,7 +97,7 @@ def save_json_to_examples(zip_filename: str, csv_filename: str) -> bool:
         
         # Save JSON as JSONL (newline-delimited) with CSV filename
         csv_base = Path(csv_filename).stem
-        output_dir = Path('examples')
+        output_dir = Path('data/examples')
         output_dir.mkdir(exist_ok=True)
         
         json_output = output_dir / f"{csv_base}.json"
@@ -120,9 +120,9 @@ def show_menu():
     print("CONSENT OBSERVATORY - DATA GENERATION")
     print("="*60)
     
-    csv_files = list_available_files('websites')
+    csv_files = list_available_files('data/websites')
     if not csv_files:
-        print("[ERROR] No CSV files found in 'websites/' folder!")
+        print("[ERROR] No CSV files found in 'data/websites/' folder!")
         return None
     
     print("\nAvailable CSV files:")
@@ -152,7 +152,7 @@ def run_generation(csv_file: str, num_websites: int = None) -> bool:
     print("STEP 1: VALIDATE CSV")
     print("-"*60)
     
-    csv_path = f"websites/{csv_file}"
+    csv_path = f"data/websites/{csv_file}"
     if not validate_file(csv_path):
         print("[ERROR] CSV validation failed!")
         return False

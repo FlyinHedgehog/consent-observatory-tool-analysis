@@ -77,7 +77,7 @@ def analyze_cookies_and_buttons(records: List[Dict[str, Any]]):
     return df_cookies, df_buttons, df_sites
 
 
-def save_analysis(df_cookies, df_buttons, df_sites, output_dir: str = "analysis_output"):
+def save_analysis(df_cookies, df_buttons, df_sites, output_dir: str = "data/output/analysis"):
     """Save the analysis dataframes to Excel files."""
     from pathlib import Path
     
