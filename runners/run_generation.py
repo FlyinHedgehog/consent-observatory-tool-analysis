@@ -37,6 +37,23 @@ def check_server_health(ports: list = None, timeout: int = 5) -> bool:
     return False
 
 
+def find_server_port(ports: list = None, timeout: int = 5) -> int:
+    """Find which port the server is actually running on. Returns None if not found."""
+    if ports is None:
+        ports = [5173, 3000, 80]
+    
+    for port in ports:
+        try:
+            url = f'http://localhost:{port}/'
+            response = requests.get(url, timeout=timeout)
+            if response.status_code in (200, 301, 302, 404):
+                return port
+        except (requests.exceptions.ConnectionError, requests.exceptions.Timeout, Exception):
+            continue
+    
+    return None
+
+
 def extract_json_from_zip(zip_path: Path) -> list:
     """Extract JSON data from the completed ZIP file. Handles both JSON and JSONL formats."""
     all_data = []
@@ -140,13 +157,14 @@ def run_generation(csv_file: str, num_websites: int = None) -> bool:
     print("-"*60)
     
     print("[...] Checking if server is running (ports: 5173, 3000, 80)...")
-    if not check_server_health():
+    server_port = find_server_port()
+    if not server_port:
         print("[ERROR] ✗ Server is NOT running!")
         print("\nTo start the server:")
         print("  cd consent-observatory.eu && npm run dev")
         return False
     
-    print("[OK] ✓ Server is running!")
+    print(f"[OK] ✓ Server is running on port {server_port}!")
     
     print("\n" + "-"*60)
     print("STEP 1: VALIDATE CSV")
@@ -168,7 +186,7 @@ def run_generation(csv_file: str, num_websites: int = None) -> bool:
     try:
         job_id, zip_file, urls = submit_websites(
             file_path=csv_path,
-            server_url='http://localhost:5173/',
+            server_url=f'http://localhost:{server_port}/',
             user_email='researcher@example.com',
             ruleset_name='Scrape-O-Matic Data Gatherers',
             limit=num_websites,
