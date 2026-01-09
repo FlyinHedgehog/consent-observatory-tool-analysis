@@ -65,37 +65,60 @@ def load_records_from_json_file(json_path: Path) -> List[Dict[str, Any]]:
 
 def load_any_records(existing_records: List[Dict[str, Any]] = None,
                      examples_dir: Path = None,
-                     completed_dir: Path = None) -> List[Dict[str, Any]]:
-    """Try in-memory records, then latest completed data-*.zip, then examples/."""
+                     completed_dir: Path = None,
+                     example_file: Optional[str] = None) -> List[Dict[str, Any]]:
+    """Load records from specified file or fall back to examples.
+    
+    If `example_file` is provided, ONLY load from that file (no fallback).
+    If no file is specified, try examples/ folder.
+    """
     if existing_records:
         return existing_records
+    
     cwd = Path.cwd()
     examples_dir = examples_dir or cwd / 'examples'
     completed_dir = completed_dir or cwd / 'consent-observatory.eu' / 'data' / 'completed'
-    ex_zip = examples_dir / 'data-example.zip'
-    ex_json_candidates = list(examples_dir.glob('*data*.json'))
 
-    # Try latest completed job first (from server)
-    if completed_dir.exists():
-        zips = sorted(completed_dir.glob('data-*.zip'), key=lambda p: p.stat().st_mtime, reverse=True)
-        for zp in zips:
-            recs = load_records_from_zip(zp)
-            if recs:
-                return recs
+    # If an explicit file was requested, ONLY load from that file
+    if example_file:
+        ef = Path(example_file)
+        if not ef.is_absolute():
+            ef = examples_dir / ef
+        
+        if ef.exists():
+            if ef.suffix == '.zip':
+                recs = load_records_from_zip(ef)
+                if recs:
+                    return recs
+            elif ef.suffix in ('.json', '.ndjson'):
+                recs = load_records_from_json_file(ef)
+                if recs:
+                    return recs
+        
+        # Requested file not found or couldn't be loaded
+        return []
 
-    # Fall back to example zip
-    if ex_zip.exists():
-        recs = load_records_from_zip(ex_zip)
-        if recs:
-            return recs
-
-    # Fall back to example JSON files
+    # No specific file requested - try examples folder
+    ex_json_candidates = sorted(examples_dir.glob('*.json'), key=lambda p: p.stat().st_mtime, reverse=True)
     for cand in ex_json_candidates:
         recs = load_records_from_json_file(cand)
         if recs and any(('url' in r or 'pageUrl' in r or 'requestedUrl' in r) for r in recs):
             return recs
 
     return []
+
+
+def list_example_files(examples_dir: Path = None) -> List[str]:
+    """Return a sorted list of example filenames found in `examples/`.
+
+    Useful for interactive notebooks to present choices to the user.
+    """
+    cwd = Path.cwd()
+    examples_dir = examples_dir or cwd / 'examples'
+    if not examples_dir.exists():
+        return []
+    files = [p.name for p in examples_dir.iterdir() if p.is_file()]
+    return sorted(files)
 
 
 # -------------------------
@@ -161,7 +184,9 @@ def submit_urls_to_server(server_url: str,
             'Accept': 'application/json',
         }
         try:
-            r = requests.post(endpoint, data=form, headers=headers, timeout=60)
+            # Use the provided timeout parameter, but at least 60 seconds
+            request_timeout = max(60, timeout)
+            r = requests.post(endpoint, data=form, headers=headers, timeout=request_timeout)
             try:
                 resp = r.json()
                 if isinstance(resp, dict):
@@ -177,18 +202,33 @@ def submit_urls_to_server(server_url: str,
                 pass
 
             if r.status_code in (200, 201, 202):
-                # If no job ID returned, wait briefly for a completed zip to appear
-                if not job_id:
-                    wait_secs = max(3, timeout)
-                    # poll in 3s steps up to timeout
-                    steps = max(1, timeout // 3)
-                    for _ in range(steps):
-                        time.sleep(3)
-                        if completed_dir.exists():
-                            zips = sorted(completed_dir.glob('data-*.zip'), key=lambda p: p.stat().st_mtime, reverse=True)
-                            if zips and zips[0].stat().st_mtime > latest_mtime:
-                                found_zip = zips[0].name
-                                break
+                # Always wait for completed zip, even if job_id is returned
+                # Poll for up to the timeout duration
+                steps = max(1, timeout // 3)
+                elapsed = 0
+                progress_interval = 20  # Print every 20 * 3 = 60 seconds (1 minute)
+                
+                print(f"\n[...] Waiting for server to process (max {timeout} seconds)...")
+                
+                for step in range(steps):
+                    time.sleep(3)
+                    elapsed += 3
+                    
+                    # Print progress every minute
+                    if (step + 1) % progress_interval == 0:
+                        remaining = timeout - elapsed
+                        print(f"[...] Still waiting... {elapsed}s elapsed, {remaining}s remaining")
+                    
+                    if completed_dir.exists():
+                        zips = sorted(completed_dir.glob('data-*.zip'), key=lambda p: p.stat().st_mtime, reverse=True)
+                        if zips and zips[0].stat().st_mtime > latest_mtime:
+                            found_zip = zips[0].name
+                            print(f"[OK] Results ready after {elapsed} seconds!")
+                            break
+                
+                if not found_zip and elapsed >= timeout:
+                    print(f"[TIMEOUT] Server did not complete within {timeout} seconds")
+                
                 return job_id, found_zip
         except requests.exceptions.RequestException:
             continue
