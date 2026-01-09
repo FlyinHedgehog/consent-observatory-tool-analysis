@@ -4,9 +4,8 @@ Data Generation Module
 Handles submitting URLs to the consent-observatory server and retrieving results.
 """
 
-from pathlib import Path
 from typing import Optional, Tuple, List
-from .notebook_utils import submit_urls_to_server, load_any_records
+from .data_loader import submit_urls_to_server, load_any_records
 
 
 def generate_data(
