@@ -1,110 +1,222 @@
 """
 Data Generation Runner
+======================
 
-Reads websites from CSV and submits them to the server for analysis.
-Saves extracted JSON data to examples folder with the CSV filename.
+Command-line interface for submitting website lists to the consent-observatory
+server and saving the resulting analysis data.
+
+Workflow:
+    1. Check if consent-observatory server is running
+    2. Read website domains from CSV file
+    3. Submit URLs to server for analysis
+    4. Extract JSON data from completed ZIP
+    5. Save to data/examples/ for later analysis
+
+Prerequisites:
+    - Consent-observatory server must be running locally
+    - CSV file with website domains in data/websites/
+
+Usage:
+    python runners/run_generation.py
+    
+    Then follow the interactive prompts.
 """
 
-import sys
-import requests
 import json
+import sys
 import zipfile
 from pathlib import Path
+from typing import List, Optional
 
+import requests
+
+# Add parent directory to path for local imports
 sys.path.insert(0, str(Path(__file__).parent.parent))
 
 from src.website_submitter import (
-    submit_websites,
     list_available_files,
-    validate_file
+    submit_websites,
+    validate_file,
 )
 
 
-def check_server_health(ports: list = None, timeout: int = 5) -> bool:
-    """Check if consent-observatory server is running on any of the ports."""
+# =============================================================================
+# CONSTANTS
+# =============================================================================
+
+# Server configuration
+DEFAULT_PORTS = [5173, 3000, 80]
+HEALTH_CHECK_TIMEOUT = 5  # seconds
+
+# Directory paths
+WEBSITES_DIR = 'data/websites'
+COMPLETED_DIR = Path('consent-observatory.eu') / 'data' / 'completed'
+EXAMPLES_DIR = Path('data/examples')
+
+# Submission settings
+DEFAULT_TIMEOUT = 600  # 10 minutes for large batches
+
+
+# =============================================================================
+# SERVER HEALTH CHECKS
+# =============================================================================
+
+def check_server_health(ports: Optional[List[int]] = None, timeout: int = HEALTH_CHECK_TIMEOUT) -> bool:
+    """
+    Check if the consent-observatory server is running on any known port.
+    
+    Args:
+        ports: List of ports to try (default: [5173, 3000, 80])
+        timeout: Connection timeout in seconds
+    
+    Returns:
+        True if server is reachable, False otherwise
+    """
     if ports is None:
-        ports = [5173, 3000, 80]
+        ports = DEFAULT_PORTS
     
     for port in ports:
-        try:
-            url = f'http://localhost:{port}/'
-            response = requests.get(url, timeout=timeout)
-            if response.status_code in (200, 301, 302, 404):
-                return True
-        except (requests.exceptions.ConnectionError, requests.exceptions.Timeout, Exception):
-            continue
+        if _is_port_responsive(port, timeout):
+            return True
     
     return False
 
 
-def find_server_port(ports: list = None, timeout: int = 5) -> int:
-    """Find which port the server is actually running on. Returns None if not found."""
+def find_server_port(ports: Optional[List[int]] = None, timeout: int = HEALTH_CHECK_TIMEOUT) -> Optional[int]:
+    """
+    Find which port the server is running on.
+    
+    Args:
+        ports: List of ports to check
+        timeout: Connection timeout in seconds
+    
+    Returns:
+        The port number if found, None otherwise
+    """
     if ports is None:
-        ports = [5173, 3000, 80]
+        ports = DEFAULT_PORTS
     
     for port in ports:
-        try:
-            url = f'http://localhost:{port}/'
-            response = requests.get(url, timeout=timeout)
-            if response.status_code in (200, 301, 302, 404):
-                return port
-        except (requests.exceptions.ConnectionError, requests.exceptions.Timeout, Exception):
-            continue
+        if _is_port_responsive(port, timeout):
+            return port
     
     return None
 
 
-def extract_json_from_zip(zip_path: Path) -> list:
-    """Extract JSON data from the completed ZIP file. Handles both JSON and JSONL formats."""
-    all_data = []
+def _is_port_responsive(port: int, timeout: int) -> bool:
+    """Check if a specific port responds to HTTP requests."""
+    try:
+        url = f'http://localhost:{port}/'
+        response = requests.get(url, timeout=timeout)
+        # Any response (even 404) means server is running
+        return response.status_code in (200, 301, 302, 404)
+    except (requests.exceptions.ConnectionError, 
+            requests.exceptions.Timeout):
+        return False
+
+
+# =============================================================================
+# DATA EXTRACTION
+# =============================================================================
+
+def extract_json_from_zip(zip_path: Path) -> List[dict]:
+    """
+    Extract JSON data from a completed results ZIP file.
+    
+    Handles both standard JSON arrays and JSONL (newline-delimited) formats.
+    
+    Args:
+        zip_path: Path to the ZIP file
+    
+    Returns:
+        List of record dictionaries
+    """
+    all_data: List[dict] = []
     
     try:
-        with zipfile.ZipFile(zip_path, 'r') as zip_ref:
-            json_files = [f for f in zip_ref.namelist() if f.endswith('.json')]
+        with zipfile.ZipFile(zip_path, 'r') as archive:
+            json_files = [f for f in archive.namelist() if f.endswith('.json')]
             
             if not json_files:
                 return all_data
             
             for json_file in json_files:
-                try:
-                    with zip_ref.open(json_file) as f:
-                        content = f.read().decode('utf-8')
-                        
-                        # Try standard JSON first
-                        try:
-                            data = json.loads(content)
-                            if isinstance(data, list):
-                                all_data.extend(data)
-                            else:
-                                all_data.append(data)
-                        except json.JSONDecodeError as e:
-                            # Try JSONL format if standard JSON fails
-                            if "Extra data" in str(e):
-                                for line in content.strip().split('\n'):
-                                    if line.strip():
-                                        try:
-                                            all_data.append(json.loads(line))
-                                        except json.JSONDecodeError:
-                                            continue
-                            else:
-                                raise e
-                except Exception:
-                    continue
-    except Exception:
+                records = _extract_json_file(archive, json_file)
+                all_data.extend(records)
+                
+    except (zipfile.BadZipFile, FileNotFoundError, OSError):
         return []
     
     return all_data
 
 
-def save_json_to_examples(zip_filename: str, csv_filename: str) -> bool:
-    """Extract JSON from ZIP and save to data/examples folder with CSV filename in JSONL format."""
+def _extract_json_file(archive: zipfile.ZipFile, filename: str) -> List[dict]:
+    """
+    Extract records from a single JSON file within an archive.
+    
+    Tries standard JSON first, falls back to JSONL format.
+    """
+    records: List[dict] = []
+    
     try:
-        source_zip = Path('consent-observatory.eu') / 'data' / 'completed' / zip_filename
+        with archive.open(filename) as file:
+            content = file.read().decode('utf-8')
+            
+            # Try standard JSON first
+            try:
+                data = json.loads(content)
+                if isinstance(data, list):
+                    records.extend(data)
+                else:
+                    records.append(data)
+                    
+            except json.JSONDecodeError as e:
+                # Fall back to JSONL format if JSON fails
+                if "Extra data" in str(e):
+                    records.extend(_parse_jsonl(content))
+                else:
+                    raise
+                    
+    except (json.JSONDecodeError, UnicodeDecodeError):
+        pass
+    
+    return records
+
+
+def _parse_jsonl(content: str) -> List[dict]:
+    """Parse newline-delimited JSON content."""
+    records = []
+    for line in content.strip().split('\n'):
+        if line.strip():
+            try:
+                records.append(json.loads(line))
+            except json.JSONDecodeError:
+                continue
+    return records
+
+
+def save_json_to_examples(zip_filename: str, csv_filename: str) -> bool:
+    """
+    Extract JSON from ZIP and save to examples folder.
+    
+    Saves as JSONL format with the same base name as the source CSV.
+    
+    Args:
+        zip_filename: Name of the completed ZIP file
+        csv_filename: Name of the source CSV file (for output naming)
+    
+    Returns:
+        True if successful, False otherwise
+    """
+    try:
+        # Locate source ZIP
+        source_zip = COMPLETED_DIR / zip_filename
         
         if not source_zip.exists():
             print(f"[ERROR] ZIP file not found: {source_zip}")
             return False
         
+        # Extract data
         print(f"[...] Extracting JSON data from ZIP...")
         all_data = extract_json_from_zip(source_zip)
         
@@ -112,15 +224,15 @@ def save_json_to_examples(zip_filename: str, csv_filename: str) -> bool:
             print(f"[ERROR] No data found in ZIP file")
             return False
         
-        # Save JSON as JSONL (newline-delimited) with CSV filename
+        # Save as JSONL with CSV base name
         csv_base = Path(csv_filename).stem
-        output_dir = Path('data/examples')
-        output_dir.mkdir(exist_ok=True)
+        EXAMPLES_DIR.mkdir(exist_ok=True)
         
-        json_output = output_dir / f"{csv_base}.json"
-        with open(json_output, 'w', encoding='utf-8') as f:
+        json_output = EXAMPLES_DIR / f"{csv_base}.json"
+        
+        with open(json_output, 'w', encoding='utf-8') as file:
             for record in all_data:
-                f.write(json.dumps(record, ensure_ascii=False) + '\n')
+                file.write(json.dumps(record, ensure_ascii=False) + '\n')
         
         print(f"[OK] ✓ JSON saved to: {json_output}")
         print(f"[OK] ✓ Records: {len(all_data)}")
@@ -131,15 +243,23 @@ def save_json_to_examples(zip_filename: str, csv_filename: str) -> bool:
         return False
 
 
-def show_menu():
-    """Display available CSV files and let user choose."""
-    print("\n" + "="*60)
-    print("CONSENT OBSERVATORY - DATA GENERATION")
-    print("="*60)
+# =============================================================================
+# USER INTERFACE
+# =============================================================================
+
+def show_menu() -> Optional[List[str]]:
+    """
+    Display interactive menu for selecting CSV files.
     
-    csv_files = list_available_files('data/websites')
+    Returns:
+        List of available CSV files, or None if none found
+    """
+    _print_header("CONSENT OBSERVATORY - DATA GENERATION")
+    
+    csv_files = list_available_files(WEBSITES_DIR)
+    
     if not csv_files:
-        print("[ERROR] No CSV files found in 'data/websites/' folder!")
+        print(f"[ERROR] No CSV files found in '{WEBSITES_DIR}/' folder!")
         return None
     
     print("\nAvailable CSV files:")
@@ -149,15 +269,49 @@ def show_menu():
     return csv_files
 
 
-def run_generation(csv_file: str, num_websites: int = None) -> bool:
-    """Run data generation from CSV."""
+def _print_header(title: str) -> None:
+    """Print a formatted section header."""
+    print("\n" + "=" * 60)
+    print(title)
+    print("=" * 60)
+
+
+def _print_step(step_number: int, title: str) -> None:
+    """Print a formatted step header."""
+    print("\n" + "-" * 60)
+    print(f"STEP {step_number}: {title}")
+    print("-" * 60)
+
+
+# =============================================================================
+# GENERATION PIPELINE
+# =============================================================================
+
+def run_generation(csv_file: str, num_websites: Optional[int] = None) -> bool:
+    """
+    Execute the full data generation pipeline.
     
-    print("\n" + "-"*60)
-    print("STEP 0: CHECK SERVER")
-    print("-"*60)
+    Pipeline Steps:
+        0. Check server availability
+        1. Validate CSV file
+        2. Submit URLs to server
+        3. Save extracted JSON data
     
-    print("[...] Checking if server is running (ports: 5173, 3000, 80)...")
+    Args:
+        csv_file: CSV filename (in data/websites/)
+        num_websites: Optional limit on number of websites to submit
+    
+    Returns:
+        True if generation completed successfully, False otherwise
+    """
+    # -------------------------------------------------------------------------
+    # Step 0: Check Server
+    # -------------------------------------------------------------------------
+    _print_step(0, "CHECK SERVER")
+    
+    print(f"[...] Checking if server is running (ports: {DEFAULT_PORTS})...")
     server_port = find_server_port()
+    
     if not server_port:
         print("[ERROR] ✗ Server is NOT running!")
         print("\nTo start the server:")
@@ -166,22 +320,25 @@ def run_generation(csv_file: str, num_websites: int = None) -> bool:
     
     print(f"[OK] ✓ Server is running on port {server_port}!")
     
-    print("\n" + "-"*60)
-    print("STEP 1: VALIDATE CSV")
-    print("-"*60)
+    # -------------------------------------------------------------------------
+    # Step 1: Validate CSV
+    # -------------------------------------------------------------------------
+    _print_step(1, "VALIDATE CSV")
     
-    csv_path = f"data/websites/{csv_file}"
+    csv_path = f"{WEBSITES_DIR}/{csv_file}"
+    
     if not validate_file(csv_path):
         print("[ERROR] CSV validation failed!")
         return False
+    
     print(f"[OK] ✓ CSV validated: {csv_path}")
     
-    print("\n" + "-"*60)
-    print("STEP 2: SUBMIT TO SERVER")
-    print("-"*60)
+    # -------------------------------------------------------------------------
+    # Step 2: Submit to Server
+    # -------------------------------------------------------------------------
+    _print_step(2, "SUBMIT TO SERVER")
     
     print(f"[...] Submitting websites to server...")
-    print(f"[...] This may take a few minutes for {len(urls) if 'urls' in locals() else 'N'} websites...")
     
     try:
         job_id, zip_file, urls = submit_websites(
@@ -190,17 +347,18 @@ def run_generation(csv_file: str, num_websites: int = None) -> bool:
             user_email='researcher@example.com',
             ruleset_name='Scrape-O-Matic Data Gatherers',
             limit=num_websites,
-            timeout=600  # Increased to 10 minutes for large batches
+            timeout=DEFAULT_TIMEOUT
         )
     except Exception as e:
         print(f"[ERROR] Submission failed: {e}")
         return False
     
+    # Handle submission results
     if not zip_file:
         if job_id:
             print(f"[WARN] Job submitted (ID: {job_id}) but results not ready yet")
             print("[WARN] The server is still processing. Results will appear in:")
-            print(f"[WARN] {Path('consent-observatory.eu') / 'data' / 'completed'}")
+            print(f"[WARN] {COMPLETED_DIR}")
         else:
             print("[ERROR] Server did not accept the submission")
             print("[HINT] Try with fewer URLs (e.g., 10-20) first")
@@ -208,49 +366,73 @@ def run_generation(csv_file: str, num_websites: int = None) -> bool:
     
     print(f"[OK] ✓ Job ID: {job_id}")
     
-    print("\n" + "-"*60)
-    print("STEP 3: SAVE JSON")
-    print("-"*60)
+    # -------------------------------------------------------------------------
+    # Step 3: Save JSON
+    # -------------------------------------------------------------------------
+    _print_step(3, "SAVE JSON")
     
     if not save_json_to_examples(zip_file, csv_file):
         return False
     
+    # -------------------------------------------------------------------------
+    # Complete
+    # -------------------------------------------------------------------------
     print("\n[COMPLETE] ✓ Data generation finished!")
-    print("="*60)
+    print("=" * 60)
     return True
 
 
-if __name__ == '__main__':
+# =============================================================================
+# MAIN ENTRY POINT
+# =============================================================================
+
+def main() -> int:
+    """
+    Main entry point for the generation runner.
+    
+    Returns:
+        Exit code (0 for success, 1 for failure)
+    """
     print("\n[START] Data Generation Module")
     
+    # Show menu and get available files
     csv_files = show_menu()
     if not csv_files:
-        exit(1)
+        return 1
     
+    # Get user selection
     choice = input("\nEnter CSV file number (or 'q' to quit): ").strip()
+    
     if choice.lower() == 'q':
         print("[CANCELLED] Exiting...")
-        exit(0)
+        return 0
     
+    # Validate selection
     try:
         idx = int(choice) - 1
-        if 0 <= idx < len(csv_files):
-            csv_file = csv_files[idx]
-        else:
+        if not 0 <= idx < len(csv_files):
             print("[ERROR] Invalid choice!")
-            exit(1)
+            return 1
+        csv_file = csv_files[idx]
     except ValueError:
         print("[ERROR] Invalid input!")
-        exit(1)
+        return 1
     
+    # Get website limit (optional)
     limit_input = input("How many websites to submit? (press Enter for all): ").strip()
     num_websites = None
+    
     if limit_input:
         try:
             num_websites = int(limit_input)
         except ValueError:
             print("[ERROR] Invalid number!")
-            exit(1)
+            return 1
     
+    # Run generation
     success = run_generation(csv_file, num_websites)
-    exit(0 if success else 1)
+    return 0 if success else 1
+
+
+if __name__ == '__main__':
+    exit(main())
