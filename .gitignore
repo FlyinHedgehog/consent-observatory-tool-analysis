@@ -32,9 +32,12 @@ wheels/
 # Project specific
 consent-observatory.eu/
 jobs_root_test/
-old-notebooks/
+src/
+runners/
 *.zip
 
 # OS
 .DS_Store
 Thumbs.db
+
+readme.md
