@@ -1,63 +1,40 @@
-# Consent Observatory Analysis Tools
+# Consent Observatory Analysis
 
-Analysis and data extraction tools for the Consent Observatory project.
+Analysis of cookie consent mechanisms on websites, comparing EU vs US traffic using Consent Observatory scraper data.
 
-## Overview
+## Data
 
-This project analyzes cookie consent mechanisms on websites by:
-1. **Generating data** - Submitting websites to the Consent Observatory server for analysis 
-Important Note: The server component is not included in this repository. You need to set up yourself. oopssie
-2. **Processing results** - Extracting cookie and button data from server responses 
-3. **Exporting analysis** - Creating Excel files for further analysis
+The data comes from the [Consent Observatory](https://consentobservatory.org/) server, which crawls websites and records cookie consent interfaces. Each record is a JSON object (one per line) with:
 
-## Quick Start
+- **`url`** – Website URL
+- **`time`** – Crawl timestamp
+- **`requestStrategy`** – Crawl strategy
+- **`data`** – Output from gatherers:
+  - **CookieGatherer** – Cookies (`name`, `domain`, `secure`, `httpOnly`, `sameSite`, etc.)
+  - **ButtonGatherer** – Consent buttons (`text`, `html`, visibility)
+  - **NormalizedWordButtonGatherer** – Normalized button labels with `category` (Accept, Reject, Settings, etc.)
+  - **EventListenerGatherer** – Event-bound consent elements
+  - **CheckboxGatherer** – Consent checkboxes
+  - **WordBoxGatherer** – Text-based consent detections (`hits`, `detections`, etc.)
+  - **CMPGatherer** – Consent Management Platforms
+  - **IABJSGatherer** – IAB TCF API detection (`tcfapiDetected`, `pingResult`)
+  - **ScreenshotGatherer** – Base64 screenshots (`onDomContentLoaded`, `onPageWait`)
+  - **DOMGatherer** – Raw HTML (`dom`)
+  - **VisibilityAnalyzer** – Visibility metadata (may be empty)
 
-### Usage
+### Data files
 
-**Run Analysis on JSON Data:**
-```bash
-python runners/run_analysis.py
+- **`data/examples/tranco_germany.json`** – EU traffic (Germany)
+- **`data/examples/tranco_us.json`** – US traffic
+
+Websites are drawn from the [Tranco](https://tranco-list.eu/) top-list (`data/websites/`).
+
+## Usage
+
+Run the analysis notebook:
+
 ```
-- Select a dataset file from `examples/` folder
-- Generates three Excel files:
-  - `cookies.xlsx` - Cookie data with security metadata
-  - `buttons.xlsx` - Consent button detections
-  - `sites_summary.xlsx` - Per-site summary
-
-**Generate Data from URLs:**
-```bash
-python runners/run_generation.py
-```
-important Note: You need to have your own Consent Observatory server running to use this feature.
-- Submit websites to Consent Observatory server
-- Retrieve and save analysis results
-
-## Data Flow
-
-```
-URLs → Server Analysis → ZIP Results → Python Processing → Excel Export
+notebooks/results_analysis.ipynb
 ```
 
-## Folder Structure
-
-- `src/` - Core analysis modules
-  - `cookie_analysis.py` - Cookie and button extraction
-  - `generate_data.py` - Server submission
-  - `website_submitter.py` - Website file reader and submitter
-  - `notebook_utils.py` - Utilities
-- `runners/` - Entry points
-  - `run_analysis.py` - Analyze saved data
-  - `run_generation.py` - Submit new analysis
-- `examples/` - Sample data files
-- `notebooks/` - Jupyter notebooks for exploration
-
-## Output Format
-
-### cookies.xlsx
-- url, cookie_name, domain, secure, httpOnly, sameSite, session
-
-### buttons.xlsx
-- url, button_text, html, is_visible
-
-### sites_summary.xlsx
-- url, cookies_found, buttons_found, has_secure_cookies
+It loads the EU and US JSON data, restricts to websites present in both crawls, and produces figures and table values for the Results section of the paper.
