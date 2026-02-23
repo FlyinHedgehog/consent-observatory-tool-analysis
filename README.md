@@ -12,7 +12,7 @@ The data comes from the [Consent Observatory](https://consentobservatory.org/) s
 - **`data`** – Output from gatherers:
   - **CookieGatherer** – Cookies (`name`, `domain`, `secure`, `httpOnly`, `sameSite`, etc.)
   - **ButtonGatherer** – Consent buttons (`text`, `html`, visibility)
-  - **NormalizedWordButtonGatherer** – Normalized button labels with `category` (Accept, Reject, Settings, etc.)
+  - **NormalizedWordButtonGatherer** – Has normalized button labels with `category`
   - **EventListenerGatherer** – Event-bound consent elements
   - **CheckboxGatherer** – Consent checkboxes
   - **WordBoxGatherer** – Text-based consent detections (`hits`, `detections`, etc.)
@@ -20,7 +20,7 @@ The data comes from the [Consent Observatory](https://consentobservatory.org/) s
   - **IABJSGatherer** – IAB TCF API detection (`tcfapiDetected`, `pingResult`)
   - **ScreenshotGatherer** – Base64 screenshots (`onDomContentLoaded`, `onPageWait`)
   - **DOMGatherer** – Raw HTML (`dom`)
-  - **VisibilityAnalyzer** – Visibility metadata (may be empty)
+  - **VisibilityAnalyzer** – Visibility metadata
 
 ### Data files
 
@@ -28,13 +28,3 @@ The data comes from the [Consent Observatory](https://consentobservatory.org/) s
 - **`data/examples/tranco_us.json`** – US traffic
 
 Websites are drawn from the [Tranco](https://tranco-list.eu/) top-list (`data/websites/`).
-
-## Usage
-
-Run the analysis notebook:
-
-```
-notebooks/results_analysis.ipynb
-```
-
-It loads the EU and US JSON data, restricts to websites present in both crawls, and produces figures and table values for the Results section of the paper.
