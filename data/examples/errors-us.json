@@ -1,0 +1,230 @@
+{"timestamp":"2026-02-23T20:24:59.311Z","url":"googleusercontent.com","errorType":"http","error":404}
+{"timestamp":"2026-02-23T20:24:59.361Z","url":"googletagmanager.com","errorType":"http","error":404}
+{"timestamp":"2026-02-23T20:24:59.404Z","url":"googleapis.com","errorType":"http","error":404}
+{"timestamp":"2026-02-23T20:24:59.523Z","url":"twitter.com","errorType":"http","error":520}
+{"timestamp":"2026-02-23T20:25:00.924Z","url":"goo.gl","errorType":"http","error":400}
+{"timestamp":"2026-02-23T20:25:14.040Z","url":"x.com","errorType":"http","error":500}
+{"timestamp":"2026-02-23T20:25:16.050Z","url":"cloudfront.net","errorType":"internal","error":"Error: net::ERR_NAME_NOT_RESOLVED at http://www.cloudfront.net"}
+{"timestamp":"2026-02-23T20:25:25.166Z","url":"tiktokv.com","errorType":"http","error":404}
+{"timestamp":"2026-02-23T20:25:27.776Z","url":"tiktokcdn.com","errorType":"internal","error":"Error: net::ERR_NAME_NOT_RESOLVED at http://www.tiktokcdn.com"}
+{"timestamp":"2026-02-23T20:25:35.626Z","url":"googleadservices.com","errorType":"http","error":404}
+{"timestamp":"2026-02-23T20:25:51.574Z","url":"criteo.com","errorType":"http","error":403}
+{"timestamp":"2026-02-23T20:26:17.269Z","url":"a2z.com","errorType":"internal","error":"Error: net::ERR_NAME_NOT_RESOLVED at http://www.a2z.com"}
+{"timestamp":"2026-02-23T20:26:20.237Z","url":"forms.gle","errorType":"http","error":400}
+{"timestamp":"2026-02-23T20:26:34.195Z","url":"msftconnecttest.com","errorType":"http","error":404}
+{"timestamp":"2026-02-23T20:26:37.295Z","url":"ggpht.com","errorType":"internal","error":"Error: net::ERR_NAME_NOT_RESOLVED at http://www.ggpht.com"}
+{"timestamp":"2026-02-23T20:26:38.202Z","url":"trafficmanager.net","errorType":"internal","error":"Error: net::ERR_NAME_NOT_RESOLVED at http://www.trafficmanager.net"}
+{"timestamp":"2026-02-23T20:26:47.876Z","url":"w3.org","errorType":"http","error":403}
+{"timestamp":"2026-02-23T20:27:05.234Z","url":"cdn-apple.com","errorType":"internal","error":"Error: net::ERR_NAME_NOT_RESOLVED at http://www.cdn-apple.com"}
+{"timestamp":"2026-02-23T20:27:05.400Z","url":"amazon.dev","errorType":"internal","error":"Error: net::ERR_NAME_NOT_RESOLVED at http://www.amazon.dev"}
+{"timestamp":"2026-02-23T20:27:06.327Z","url":"t.co","errorType":"http","error":520}
+{"timestamp":"2026-02-23T20:27:08.819Z","url":"sourceforge.net","errorType":"http","error":403}
+{"timestamp":"2026-02-23T20:27:10.803Z","url":"tiktokcdn-us.com","errorType":"internal","error":"Error: net::ERR_NAME_NOT_RESOLVED at http://www.tiktokcdn-us.com"}
+{"timestamp":"2026-02-23T20:27:15.343Z","url":"researchgate.net","errorType":"http","error":403}
+{"timestamp":"2026-02-23T20:27:17.138Z","url":"dns.google","errorType":"internal","error":"TimeoutError: Navigation timeout of 90000 ms exceeded"}
+{"timestamp":"2026-02-23T20:27:27.221Z","url":"youtube-nocookie.com","errorType":"http","error":404}
+{"timestamp":"2026-02-23T20:27:30.416Z","url":"amazon-adsystem.com","errorType":"internal","error":"TimeoutError: Navigation timeout of 90000 ms exceeded"}
+{"timestamp":"2026-02-23T20:27:49.462Z","url":"linktr.ee","errorType":"http","error":403}
+{"timestamp":"2026-02-23T20:27:49.624Z","url":"static.microsoft","errorType":"internal","error":"Error: net::ERR_NAME_NOT_RESOLVED at http://www.static.microsoft"}
+{"timestamp":"2026-02-23T20:28:01.303Z","url":"aws.dev","errorType":"internal","error":"Error: net::ERR_NAME_NOT_RESOLVED at http://www.aws.dev"}
+{"timestamp":"2026-02-23T20:28:04.324Z","url":"facebook.net","errorType":"internal","error":"Error: net::ERR_NAME_NOT_RESOLVED at http://www.facebook.net"}
+{"timestamp":"2026-02-23T20:28:04.353Z","url":"godaddy.com","errorType":"internal","error":"TimeoutError: Navigation timeout of 90000 ms exceeded"}
+{"timestamp":"2026-02-23T20:28:08.748Z","url":"reuters.com","errorType":"http","error":401}
+{"timestamp":"2026-02-23T20:28:16.996Z","url":"wiley.com","errorType":"http","error":403}
+{"timestamp":"2026-02-23T20:28:20.145Z","url":"playstation.net","errorType":"internal","error":"Error: net::ERR_NAME_NOT_RESOLVED at http://www.playstation.net"}
+{"timestamp":"2026-02-23T20:28:28.699Z","url":"media-amazon.com","errorType":"internal","error":"Error: net::ERR_NAME_NOT_RESOLVED at http://www.media-amazon.com"}
+{"timestamp":"2026-02-23T20:28:29.403Z","url":"openx.net","errorType":"http","error":404}
+{"timestamp":"2026-02-23T20:28:50.505Z","url":"telegraph.co.uk","errorType":"http","error":402}
+{"timestamp":"2026-02-23T20:28:51.443Z","url":"wsj.com","errorType":"http","error":401}
+{"timestamp":"2026-02-23T20:29:23.212Z","url":"bloomberg.com","errorType":"http","error":403}
+{"timestamp":"2026-02-23T20:29:26.450Z","url":"epicgames.com","errorType":"http","error":403}
+{"timestamp":"2026-02-23T20:29:28.185Z","url":"aliyuncs.com","errorType":"http","error":404}
+{"timestamp":"2026-02-23T20:29:38.715Z","url":"wa.me","errorType":"internal","error":"AbandonedError: The analyzer was abandoned, probably due to inactivity"}
+{"timestamp":"2026-02-23T20:29:49.405Z","url":"unsplash.com","errorType":"http","error":401}
+{"timestamp":"2026-02-23T20:29:56.014Z","url":"tiktokv.us","errorType":"internal","error":"Error: net::ERR_NAME_NOT_RESOLVED at http://www.tiktokv.us"}
+{"timestamp":"2026-02-23T20:30:01.055Z","url":"indeed.com","errorType":"http","error":403}
+{"timestamp":"2026-02-23T20:30:09.339Z","url":"jsdelivr.net","errorType":"internal","error":"TimeoutError: Navigation timeout of 90000 ms exceeded"}
+{"timestamp":"2026-02-23T20:30:14.969Z","url":"pixabay.com","errorType":"http","error":403}
+{"timestamp":"2026-02-23T20:30:41.808Z","url":"quora.com","errorType":"http","error":403}
+{"timestamp":"2026-02-23T20:30:57.146Z","url":"azurefd.net","errorType":"http","error":404}
+{"timestamp":"2026-02-23T20:31:07.248Z","url":"azureedge.net","errorType":"http","error":504}
+{"timestamp":"2026-02-23T20:31:21.586Z","url":"independent.co.uk","errorType":"internal","error":"TimeoutError: Navigation timeout of 90000 ms exceeded"}
+{"timestamp":"2026-02-23T20:31:33.869Z","url":"shalltry.com","errorType":"http","error":403}
+{"timestamp":"2026-02-23T20:31:35.860Z","url":"allawnos.com","errorType":"internal","error":"Error: net::ERR_NAME_NOT_RESOLVED at http://www.allawnos.com"}
+{"timestamp":"2026-02-23T20:31:39.227Z","url":"akamaized.net","errorType":"internal","error":"Error: net::ERR_NAME_NOT_RESOLVED at http://www.akamaized.net"}
+{"timestamp":"2026-02-23T20:31:47.742Z","url":"edgesuite.net","errorType":"http","error":400}
+{"timestamp":"2026-02-23T20:32:11.994Z","url":"list-manage.com","errorType":"internal","error":"TimeoutError: Navigation timeout of 90000 ms exceeded"}
+{"timestamp":"2026-02-23T20:32:26.477Z","url":"walmart.com","errorType":"internal","error":"TypeError: Cannot read properties of undefined (reading 'length')"}
+{"timestamp":"2026-02-23T20:32:28.357Z","url":"ietf.org","errorType":"http","error":403}
+{"timestamp":"2026-02-23T20:32:57.497Z","url":"globo.com","errorType":"internal","error":"TimeoutError: Navigation timeout of 90000 ms exceeded"}
+{"timestamp":"2026-02-23T20:32:59.884Z","url":"alicdn.com","errorType":"internal","error":"TimeoutError: Navigation timeout of 90000 ms exceeded"}
+{"timestamp":"2026-02-23T20:33:00.430Z","url":"2mdn.net","errorType":"internal","error":"Error: net::ERR_NAME_NOT_RESOLVED at http://www.2mdn.net"}
+{"timestamp":"2026-02-23T20:33:12.110Z","url":"tandfonline.com","errorType":"http","error":403}
+{"timestamp":"2026-02-23T20:33:16.985Z","url":"bsky.app","errorType":"http","error":403}
+{"timestamp":"2026-02-23T20:33:24.109Z","url":"tripadvisor.com","errorType":"http","error":403}
+{"timestamp":"2026-02-23T20:33:41.429Z","url":"kwai-pro.com","errorType":"internal","error":"AbandonedError: The analyzer was abandoned, probably due to inactivity"}
+{"timestamp":"2026-02-23T20:34:25.434Z","url":"azurewebsites.net","errorType":"internal","error":"Error: net::ERR_NAME_NOT_RESOLVED at http://www.azurewebsites.net"}
+{"timestamp":"2026-02-23T20:34:44.711Z","url":"bidswitch.net","errorType":"internal","error":"Error: net::ERR_NAME_NOT_RESOLVED at http://www.bidswitch.net"}
+{"timestamp":"2026-02-23T20:34:52.072Z","url":"aboutads.info","errorType":"internal","error":"Error: net::ERR_TIMED_OUT at http://aboutads.info"}
+{"timestamp":"2026-02-23T20:34:54.687Z","url":"sina.com.cn","errorType":"internal","error":"TimeoutError: Navigation timeout of 90000 ms exceeded"}
+{"timestamp":"2026-02-23T20:34:57.486Z","url":"shutterstock.com","errorType":"http","error":403}
+{"timestamp":"2026-02-23T20:35:20.040Z","url":"merriam-webster.com","errorType":"internal","error":"TypeError: Cannot read properties of undefined (reading 'length')"}
+{"timestamp":"2026-02-23T20:35:33.300Z","url":"accuweather.com","errorType":"internal","error":"TimeoutError: Navigation timeout of 90000 ms exceeded"}
+{"timestamp":"2026-02-23T20:35:37.975Z","url":"cambridge.org","errorType":"http","error":403}
+{"timestamp":"2026-02-23T20:35:47.402Z","url":"fandom.com","errorType":"http","error":403}
+{"timestamp":"2026-02-23T20:35:48.352Z","url":"agkn.com","errorType":"http","error":404}
+{"timestamp":"2026-02-23T20:35:53.429Z","url":"zillow.com","errorType":"http","error":403}
+{"timestamp":"2026-02-23T20:35:54.622Z","url":"heylink.me","errorType":"http","error":403}
+{"timestamp":"2026-02-23T20:36:41.069Z","url":"wildberries.ru","errorType":"http","error":498}
+{"timestamp":"2026-02-23T20:36:41.408Z","url":"mdpi.com","errorType":"http","error":403}
+{"timestamp":"2026-02-23T20:36:50.631Z","url":"fiverr.com","errorType":"http","error":403}
+{"timestamp":"2026-02-23T20:36:53.014Z","url":"liadm.com","errorType":"internal","error":"Error: net::ERR_NAME_NOT_RESOLVED at http://www.liadm.com"}
+{"timestamp":"2026-02-23T20:37:14.143Z","url":"curseforge.com","errorType":"http","error":403}
+{"timestamp":"2026-02-23T20:37:18.811Z","url":"allaboutcookies.org","errorType":"http","error":403}
+{"timestamp":"2026-02-23T20:37:24.592Z","url":"ozon.ru","errorType":"http","error":403}
+{"timestamp":"2026-02-23T20:37:34.797Z","url":"avast.com","errorType":"internal","error":"TypeError: Cannot read properties of undefined (reading 'length')"}
+{"timestamp":"2026-02-23T20:37:40.021Z","url":"creativecdn.com","errorType":"internal","error":"Error: net::ERR_ABORTED at http://creativecdn.com"}
+{"timestamp":"2026-02-23T20:38:57.685Z","url":"33across.com","errorType":"http","error":403}
+{"timestamp":"2026-02-23T20:39:00.068Z","url":"fda.gov","errorType":"http","error":404}
+{"timestamp":"2026-02-23T20:39:23.420Z","url":"webmd.com","errorType":"internal","error":"TimeoutError: Navigation timeout of 90000 ms exceeded"}
+{"timestamp":"2026-02-23T20:39:33.498Z","url":"githubusercontent.com","errorType":"http","error":500}
+{"timestamp":"2026-02-23T20:39:38.944Z","url":"everesttech.net","errorType":"internal","error":"TimeoutError: Navigation timeout of 90000 ms exceeded"}
+{"timestamp":"2026-02-23T20:39:42.343Z","url":"pexels.com","errorType":"http","error":403}
+{"timestamp":"2026-02-23T20:40:06.562Z","url":"hm.com","errorType":"http","error":403}
+{"timestamp":"2026-02-23T20:40:18.536Z","url":"mlb.com","errorType":"internal","error":"Error: Page crashed!"}
+{"timestamp":"2026-02-23T20:40:20.023Z","url":"recaptcha.net","errorType":"http","error":404}
+{"timestamp":"2026-02-23T20:40:29.850Z","url":"iso.org","errorType":"http","error":403}
+{"timestamp":"2026-02-23T20:40:35.173Z","url":"kickstarter.com","errorType":"http","error":403}
+{"timestamp":"2026-02-23T20:40:42.573Z","url":"criteo.net","errorType":"internal","error":"Error: net::ERR_NAME_NOT_RESOLVED at http://www.criteo.net"}
+{"timestamp":"2026-02-23T20:40:50.006Z","url":"adjust.com","errorType":"http","error":429}
+{"timestamp":"2026-02-23T20:40:58.375Z","url":"grammarly.io","errorType":"internal","error":"Error: net::ERR_NAME_NOT_RESOLVED at http://www.grammarly.io"}
+{"timestamp":"2026-02-23T20:41:22.278Z","url":"yieldmo.com","errorType":"internal","error":"TimeoutError: Navigation timeout of 90000 ms exceeded"}
+{"timestamp":"2026-02-23T20:41:50.435Z","url":"mckinsey.com","errorType":"internal","error":"TimeoutError: Navigation timeout of 90000 ms exceeded"}
+{"timestamp":"2026-02-23T20:41:53.903Z","url":"omnitagjs.com","errorType":"internal","error":"Error: net::ERR_NAME_NOT_RESOLVED at http://www.omnitagjs.com"}
+{"timestamp":"2026-02-23T20:42:26.793Z","url":"imrworldwide.com","errorType":"internal","error":"Error: net::ERR_NAME_NOT_RESOLVED at http://www.imrworldwide.com"}
+{"timestamp":"2026-02-23T20:42:34.243Z","url":"quizlet.com","errorType":"http","error":403}
+{"timestamp":"2026-02-23T20:42:45.691Z","url":"akamaihd.net","errorType":"internal","error":"Error: net::ERR_NAME_NOT_RESOLVED at http://www.akamaihd.net"}
+{"timestamp":"2026-02-23T20:42:59.571Z","url":"corriere.it","errorType":"internal","error":"TimeoutError: Navigation timeout of 90000 ms exceeded"}
+{"timestamp":"2026-02-23T20:43:20.997Z","url":"sentinelone.net","errorType":"internal","error":"TimeoutError: Navigation timeout of 90000 ms exceeded"}
+{"timestamp":"2026-02-23T20:43:45.068Z","url":"bol.com","errorType":"http","error":403}
+{"timestamp":"2026-02-23T20:44:02.477Z","url":"coupang.com","errorType":"http","error":403}
+{"timestamp":"2026-02-23T20:44:05.915Z","url":"redfin.com","errorType":"http","error":405}
+{"timestamp":"2026-02-23T20:44:07.693Z","url":"linklist.bio","errorType":"internal","error":"AbandonedError: The analyzer was abandoned, probably due to inactivity"}
+{"timestamp":"2026-02-23T20:44:23.133Z","url":"wbx2.com","errorType":"internal","error":"TimeoutError: Navigation timeout of 90000 ms exceeded"}
+{"timestamp":"2026-02-23T20:44:26.832Z","url":"run.app","errorType":"http","error":404}
+{"timestamp":"2026-02-23T20:44:28.421Z","url":"fbsbx.com","errorType":"http","error":404}
+{"timestamp":"2026-02-23T20:44:40.068Z","url":"microsoftpersonalcontent.com","errorType":"internal","error":"Error: net::ERR_NAME_NOT_RESOLVED at http://www.microsoftpersonalcontent.com"}
+{"timestamp":"2026-02-23T20:44:41.124Z","url":"flipkart.com","errorType":"http","error":403}
+{"timestamp":"2026-02-23T20:44:43.989Z","url":"nexusmods.com","errorType":"http","error":403}
+{"timestamp":"2026-02-23T20:44:44.745Z","url":"kohls.com","errorType":"http","error":403}
+{"timestamp":"2026-02-23T20:45:04.345Z","url":"newsweek.com","errorType":"internal","error":"TimeoutError: Navigation timeout of 90000 ms exceeded"}
+{"timestamp":"2026-02-23T20:45:28.843Z","url":"box.com","errorType":"http","error":403}
+{"timestamp":"2026-02-23T20:45:32.907Z","url":"anydesk.com","errorType":"http","error":403}
+{"timestamp":"2026-02-23T20:45:37.679Z","url":"samsungapps.com","errorType":"internal","error":"ReferenceError: gatherer is not defined"}
+{"timestamp":"2026-02-23T20:45:38.775Z","url":"oraclecloud.com","errorType":"http","error":403}
+{"timestamp":"2026-02-23T20:45:50.373Z","url":"businesswire.com","errorType":"http","error":403}
+{"timestamp":"2026-02-23T20:46:08.974Z","url":"columbia.edu","errorType":"http","error":403}
+{"timestamp":"2026-02-23T20:46:11.493Z","url":"moneycontrol.com","errorType":"internal","error":"TimeoutError: Navigation timeout of 90000 ms exceeded"}
+{"timestamp":"2026-02-23T20:46:24.123Z","url":"huffingtonpost.com","errorType":"internal","error":"ReferenceError: gatherer is not defined"}
+{"timestamp":"2026-02-23T20:46:37.440Z","url":"leboncoin.fr","errorType":"http","error":403}
+{"timestamp":"2026-02-23T20:47:42.985Z","url":"hltv.org","errorType":"http","error":403}
+{"timestamp":"2026-02-23T20:48:09.491Z","url":"forter.com","errorType":"internal","error":"ReferenceError: gatherer is not defined"}
+{"timestamp":"2026-02-23T20:48:10.638Z","url":"nu.nl","errorType":"http","error":403}
+{"timestamp":"2026-02-23T20:48:12.466Z","url":"archiveofourown.org","errorType":"internal","error":"TimeoutError: Navigation timeout of 90000 ms exceeded"}
+{"timestamp":"2026-02-23T20:48:14.447Z","url":"myqcloud.com","errorType":"internal","error":"Error: net::ERR_NAME_NOT_RESOLVED at http://www.myqcloud.com"}
+{"timestamp":"2026-02-23T20:48:25.440Z","url":"economist.com","errorType":"http","error":403}
+{"timestamp":"2026-02-23T20:48:30.950Z","url":"umich.edu","errorType":"http","error":403}
+{"timestamp":"2026-02-23T20:48:33.419Z","url":"msftauth.net","errorType":"internal","error":"Error: net::ERR_NAME_NOT_RESOLVED at http://www.msftauth.net"}
+{"timestamp":"2026-02-23T20:48:33.708Z","url":"bet365.com","errorType":"http","error":403}
+{"timestamp":"2026-02-23T20:48:34.426Z","url":"docomo.ne.jp","errorType":"internal","error":"TimeoutError: Navigation timeout of 90000 ms exceeded"}
+{"timestamp":"2026-02-23T20:48:58.559Z","url":"india.com","errorType":"internal","error":"TimeoutError: Navigation timeout of 90000 ms exceeded"}
+{"timestamp":"2026-02-23T20:49:03.619Z","url":"espncricinfo.com","errorType":"internal","error":"ReferenceError: gatherer is not defined"}
+{"timestamp":"2026-02-23T20:49:33.583Z","url":"oxylabs.io","errorType":"internal","error":"TypeError: Cannot read properties of undefined (reading 'length')"}
+{"timestamp":"2026-02-23T20:49:50.119Z","url":"ad.nl","errorType":"http","error":403}
+{"timestamp":"2026-02-23T20:49:50.609Z","url":"spankbang.com","errorType":"http","error":403}
+{"timestamp":"2026-02-23T20:51:02.361Z","url":"kwcdn.com","errorType":"internal","error":"Error: net::ERR_NAME_NOT_RESOLVED at http://www.kwcdn.com"}
+{"timestamp":"2026-02-23T20:51:02.378Z","url":"makemytrip.com","errorType":"http","error":403}
+{"timestamp":"2026-02-23T20:51:14.587Z","url":"i18n-pglstatp.com","errorType":"internal","error":"Error: net::ERR_NAME_NOT_RESOLVED at http://www.i18n-pglstatp.com"}
+{"timestamp":"2026-02-23T20:51:35.811Z","url":"apkpure.net","errorType":"http","error":403}
+{"timestamp":"2026-02-23T20:51:36.682Z","url":"idealista.com","errorType":"http","error":403}
+{"timestamp":"2026-02-23T20:51:36.780Z","url":"livedoor.jp","errorType":"http","error":403}
+{"timestamp":"2026-02-23T20:51:52.611Z","url":"usnews.com","errorType":"internal","error":"TimeoutError: Navigation timeout of 90000 ms exceeded"}
+{"timestamp":"2026-02-23T20:51:53.139Z","url":"hln.be","errorType":"http","error":403}
+{"timestamp":"2026-02-23T20:52:25.616Z","url":"kicker.de","errorType":"http","error":403}
+{"timestamp":"2026-02-23T20:52:40.049Z","url":"odoo.com","errorType":"http","error":403}
+{"timestamp":"2026-02-23T20:52:44.265Z","url":"jusbrasil.com.br","errorType":"http","error":403}
+{"timestamp":"2026-02-23T20:52:44.405Z","url":"autotrader.co.uk","errorType":"http","error":403}
+{"timestamp":"2026-02-23T20:52:45.317Z","url":"fanfiction.net","errorType":"internal","error":"TimeoutError: Navigation timeout of 90000 ms exceeded"}
+{"timestamp":"2026-02-23T20:52:46.566Z","url":"merkur.de","errorType":"internal","error":"TimeoutError: Navigation timeout of 90000 ms exceeded"}
+{"timestamp":"2026-02-23T20:52:48.380Z","url":"janitorai.com","errorType":"http","error":403}
+{"timestamp":"2026-02-23T20:52:49.314Z","url":"sahibinden.com","errorType":"http","error":403}
+{"timestamp":"2026-02-23T20:53:06.829Z","url":"ebay.it","errorType":"internal","error":"TimeoutError: Navigation timeout of 90000 ms exceeded"}
+{"timestamp":"2026-02-23T20:53:07.692Z","url":"donmai.us","errorType":"http","error":404}
+{"timestamp":"2026-02-23T20:53:15.584Z","url":"8lyyu1vb4.com","errorType":"internal","error":"Error: net::ERR_NAME_NOT_RESOLVED at http://www.8lyyu1vb4.com"}
+{"timestamp":"2026-02-23T20:53:23.401Z","url":"justdial.com","errorType":"http","error":403}
+{"timestamp":"2026-02-23T20:53:54.211Z","url":"missav.ws","errorType":"http","error":403}
+{"timestamp":"2026-02-23T20:54:07.479Z","url":"boyfriendtv.com","errorType":"http","error":403}
+{"timestamp":"2026-02-23T20:54:15.137Z","url":"apple.news","errorType":"internal","error":"NullError: Response was null"}
+{"timestamp":"2026-02-23T20:54:18.629Z","url":"bookmyshow.com","errorType":"http","error":403}
+{"timestamp":"2026-02-23T20:54:25.346Z","url":"dbankcloud.cn","errorType":"internal","error":"TimeoutError: Navigation timeout of 90000 ms exceeded"}
+{"timestamp":"2026-02-23T20:55:00.910Z","url":"leroymerlin.fr","errorType":"http","error":403}
+{"timestamp":"2026-02-23T20:55:01.550Z","url":"skroutz.gr","errorType":"http","error":403}
+{"timestamp":"2026-02-23T20:55:04.269Z","url":"bookmark.xxx","errorType":"http","error":451}
+{"timestamp":"2026-02-23T20:55:24.489Z","url":"jalan.net","errorType":"http","error":503}
+{"timestamp":"2026-02-23T20:55:26.975Z","url":"zozo.jp","errorType":"http","error":403}
+{"timestamp":"2026-02-23T20:55:28.410Z","url":"hollywoodbets.net","errorType":"http","error":403}
+{"timestamp":"2026-02-23T20:55:37.560Z","url":"oecd.org","errorType":"http","error":403}
+{"timestamp":"2026-02-23T20:55:39.656Z","url":"cityheaven.net","errorType":"http","error":403}
+{"timestamp":"2026-02-23T20:55:42.803Z","url":"hilton.com","errorType":"http","error":403}
+{"timestamp":"2026-02-23T20:55:46.985Z","url":"idealista.it","errorType":"http","error":403}
+{"timestamp":"2026-02-23T20:55:56.987Z","url":"cm65.com","errorType":"internal","error":"Error: net::ERR_NAME_NOT_RESOLVED at http://www.cm65.com"}
+{"timestamp":"2026-02-23T20:56:10.929Z","url":"prom.ua","errorType":"http","error":429}
+{"timestamp":"2026-02-23T20:56:11.969Z","url":"p2yn.com","errorType":"internal","error":"Error: net::ERR_NAME_NOT_RESOLVED at http://www.p2yn.com"}
+{"timestamp":"2026-02-23T20:56:15.376Z","url":"trello.com","errorType":"internal","error":"TypeError: Cannot read properties of undefined (reading 'length')"}
+{"timestamp":"2026-02-23T20:56:16.627Z","url":"tsyndicate.com","errorType":"internal","error":"Error: net::ERR_ABORTED at http://tsyndicate.com"}
+{"timestamp":"2026-02-23T20:56:45.218Z","url":"uidai.gov.in","errorType":"internal","error":"TimeoutError: Navigation timeout of 90000 ms exceeded"}
+{"timestamp":"2026-02-23T20:56:55.647Z","url":"gcdn.co","errorType":"internal","error":"Error: net::ERR_EMPTY_RESPONSE at http://gcdn.co"}
+{"timestamp":"2026-02-23T20:56:57.728Z","url":"suumo.jp","errorType":"internal","error":"TimeoutError: Navigation timeout of 90000 ms exceeded"}
+{"timestamp":"2026-02-23T20:57:07.716Z","url":"1mg.com","errorType":"http","error":403}
+{"timestamp":"2026-02-23T20:57:08.319Z","url":"dkitrxmdwoqruvsi.net","errorType":"internal","error":"Error: net::ERR_NAME_NOT_RESOLVED at http://www.dkitrxmdwoqruvsi.net"}
+{"timestamp":"2026-02-23T20:57:09.547Z","url":"byteoversea.com","errorType":"internal","error":"Error: net::ERR_NAME_NOT_RESOLVED at http://www.byteoversea.com"}
+{"timestamp":"2026-02-23T20:57:16.276Z","url":"x3os.com","errorType":"internal","error":"Error: net::ERR_NAME_NOT_RESOLVED at http://www.x3os.com"}
+{"timestamp":"2026-02-23T20:57:20.440Z","url":"banvenez.com","errorType":"internal","error":"Error: net::ERR_NAME_NOT_RESOLVED at http://www.banvenez.com"}
+{"timestamp":"2026-02-23T20:57:24.031Z","url":"fmkorea.com","errorType":"http","error":430}
+{"timestamp":"2026-02-23T20:58:59.248Z","url":"livehindustan.com","errorType":"internal","error":"TimeoutError: Navigation timeout of 90000 ms exceeded"}
+{"timestamp":"2026-02-23T20:59:03.003Z","url":"hanime1.me","errorType":"http","error":403}
+{"timestamp":"2026-02-23T20:59:10.772Z","url":"luxuretv.com","errorType":"http","error":403}
+{"timestamp":"2026-02-23T20:59:12.229Z","url":"up.gov.in","errorType":"internal","error":"TimeoutError: Navigation timeout of 90000 ms exceeded"}
+{"timestamp":"2026-02-23T20:59:12.803Z","url":"mangabuff.ru","errorType":"http","error":403}
+{"timestamp":"2026-02-23T20:59:16.098Z","url":"missav.ai","errorType":"http","error":403}
+{"timestamp":"2026-02-23T20:59:30.763Z","url":"shahvani.com","errorType":"http","error":403}
+{"timestamp":"2026-02-23T20:59:36.192Z","url":"supjav.com","errorType":"http","error":403}
+{"timestamp":"2026-02-23T20:59:38.299Z","url":"upmusics.com","errorType":"internal","error":"Error: net::ERR_INVALID_REDIRECT at http://upmusics.com"}
+{"timestamp":"2026-02-23T20:59:40.804Z","url":"wnacg.com","errorType":"http","error":403}
+{"timestamp":"2026-02-23T20:59:46.427Z","url":"ptt.cc","errorType":"internal","error":"Error: net::ERR_CONNECTION_CLOSED at http://ptt.cc"}
+{"timestamp":"2026-02-23T20:59:47.813Z","url":"bb2r.com","errorType":"http","error":409}
+{"timestamp":"2026-02-23T21:00:00.128Z","url":"bato.to","errorType":"internal","error":"TimeoutError: Navigation timeout of 90000 ms exceeded"}
+{"timestamp":"2026-02-23T21:00:14.187Z","url":"casinoplus.com.ph","errorType":"http","error":403}
+{"timestamp":"2026-02-23T21:00:26.629Z","url":"ekstrabladet.dk","errorType":"internal","error":"TypeError: Cannot read properties of undefined (reading 'length')"}
+{"timestamp":"2026-02-23T21:00:26.821Z","url":"cardmarket.com","errorType":"http","error":403}
+{"timestamp":"2026-02-23T21:00:41.539Z","url":"bank.in","errorType":"internal","error":"Error: net::ERR_NAME_NOT_RESOLVED at http://www.bank.in"}
+{"timestamp":"2026-02-23T21:00:53.943Z","url":"lk21official.cc","errorType":"http","error":404}
+{"timestamp":"2026-02-23T21:00:59.859Z","url":"bato.si","errorType":"http","error":523}
+{"timestamp":"2026-02-23T21:01:04.244Z","url":"lausd.net","errorType":"internal","error":"NullError: Response was null"}
+{"timestamp":"2026-02-23T21:01:54.222Z","url":"manoramaonline.com","errorType":"internal","error":"TimeoutError: Navigation timeout of 90000 ms exceeded"}
+{"timestamp":"2026-02-23T21:01:54.223Z","url":"goodreturns.in","errorType":"internal","error":"TimeoutError: Navigation timeout of 90000 ms exceeded"}
+{"timestamp":"2026-02-23T21:02:09.235Z","url":"ppomppu.co.kr","errorType":"internal","error":"ReferenceError: gatherer is not defined"}
+{"timestamp":"2026-02-23T21:02:09.259Z","url":"parivahan.gov.in","errorType":"internal","error":"TimeoutError: Navigation timeout of 90000 ms exceeded"}
+{"timestamp":"2026-02-23T21:02:18.099Z","url":"bingoplus.com","errorType":"http","error":403}
+{"timestamp":"2026-02-23T21:03:16.711Z","url":"skokka.com","errorType":"http","error":403}
+{"timestamp":"2026-02-23T21:03:18.075Z","url":"myreadingmanga.info","errorType":"http","error":403}
+{"timestamp":"2026-02-23T21:03:25.813Z","url":"arabtnt.com","errorType":"http","error":403}
+{"timestamp":"2026-02-23T21:03:31.676Z","url":"24xxxx.win","errorType":"internal","error":"Error: net::ERR_NAME_NOT_RESOLVED at http://www.24xxxx.win"}
+{"timestamp":"2026-02-23T21:03:45.709Z","url":"googll.store","errorType":"http","error":403}
+{"timestamp":"2026-02-23T21:03:49.436Z","url":"eroterest.net","errorType":"internal","error":"Error: net::ERR_NAME_NOT_RESOLVED at http://www.eroterest.net"}
+{"timestamp":"2026-02-23T21:03:49.674Z","url":"happymh.com","errorType":"http","error":403}
+{"timestamp":"2026-02-23T21:03:55.248Z","url":"lectormangaa.com","errorType":"http","error":403}
+{"timestamp":"2026-02-23T21:03:58.247Z","url":"listcrawler.eu","errorType":"http","error":403}
+{"timestamp":"2026-02-23T21:04:34.259Z","url":"bt.dk","errorType":"internal","error":"TypeError: Cannot read properties of undefined (reading 'length')"}
+{"timestamp":"2026-02-23T21:05:25.427Z","url":"manhwaweb.com","errorType":"internal","error":"TimeoutError: Navigation timeout of 90000 ms exceeded"}
+{"timestamp":"2026-02-23T21:08:44.414Z","url":"kamababa.desi","errorType":"internal","error":"AbandonedError: The analyzer was abandoned, probably due to inactivity"}

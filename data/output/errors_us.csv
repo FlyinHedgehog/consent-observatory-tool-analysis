@@ -1,0 +1,231 @@
+timestamp,website_url,error_type,error_message,region
+2026-02-23T20:24:59.311Z,googleusercontent.com,http,404,us
+2026-02-23T20:24:59.361Z,googletagmanager.com,http,404,us
+2026-02-23T20:24:59.404Z,googleapis.com,http,404,us
+2026-02-23T20:24:59.523Z,twitter.com,http,520,us
+2026-02-23T20:25:00.924Z,goo.gl,http,400,us
+2026-02-23T20:25:14.040Z,x.com,http,500,us
+2026-02-23T20:25:16.050Z,cloudfront.net,internal,Error: net::ERR_NAME_NOT_RESOLVED at http://www.cloudfront.net,us
+2026-02-23T20:25:25.166Z,tiktokv.com,http,404,us
+2026-02-23T20:25:27.776Z,tiktokcdn.com,internal,Error: net::ERR_NAME_NOT_RESOLVED at http://www.tiktokcdn.com,us
+2026-02-23T20:25:35.626Z,googleadservices.com,http,404,us
+2026-02-23T20:25:51.574Z,criteo.com,http,403,us
+2026-02-23T20:26:17.269Z,a2z.com,internal,Error: net::ERR_NAME_NOT_RESOLVED at http://www.a2z.com,us
+2026-02-23T20:26:20.237Z,forms.gle,http,400,us
+2026-02-23T20:26:34.195Z,msftconnecttest.com,http,404,us
+2026-02-23T20:26:37.295Z,ggpht.com,internal,Error: net::ERR_NAME_NOT_RESOLVED at http://www.ggpht.com,us
+2026-02-23T20:26:38.202Z,trafficmanager.net,internal,Error: net::ERR_NAME_NOT_RESOLVED at http://www.trafficmanager.net,us
+2026-02-23T20:26:47.876Z,w3.org,http,403,us
+2026-02-23T20:27:05.234Z,cdn-apple.com,internal,Error: net::ERR_NAME_NOT_RESOLVED at http://www.cdn-apple.com,us
+2026-02-23T20:27:05.400Z,amazon.dev,internal,Error: net::ERR_NAME_NOT_RESOLVED at http://www.amazon.dev,us
+2026-02-23T20:27:06.327Z,t.co,http,520,us
+2026-02-23T20:27:08.819Z,sourceforge.net,http,403,us
+2026-02-23T20:27:10.803Z,tiktokcdn-us.com,internal,Error: net::ERR_NAME_NOT_RESOLVED at http://www.tiktokcdn-us.com,us
+2026-02-23T20:27:15.343Z,researchgate.net,http,403,us
+2026-02-23T20:27:17.138Z,dns.google,internal,TimeoutError: Navigation timeout of 90000 ms exceeded,us
+2026-02-23T20:27:27.221Z,youtube-nocookie.com,http,404,us
+2026-02-23T20:27:30.416Z,amazon-adsystem.com,internal,TimeoutError: Navigation timeout of 90000 ms exceeded,us
+2026-02-23T20:27:49.462Z,linktr.ee,http,403,us
+2026-02-23T20:27:49.624Z,static.microsoft,internal,Error: net::ERR_NAME_NOT_RESOLVED at http://www.static.microsoft,us
+2026-02-23T20:28:01.303Z,aws.dev,internal,Error: net::ERR_NAME_NOT_RESOLVED at http://www.aws.dev,us
+2026-02-23T20:28:04.324Z,facebook.net,internal,Error: net::ERR_NAME_NOT_RESOLVED at http://www.facebook.net,us
+2026-02-23T20:28:04.353Z,godaddy.com,internal,TimeoutError: Navigation timeout of 90000 ms exceeded,us
+2026-02-23T20:28:08.748Z,reuters.com,http,401,us
+2026-02-23T20:28:16.996Z,wiley.com,http,403,us
+2026-02-23T20:28:20.145Z,playstation.net,internal,Error: net::ERR_NAME_NOT_RESOLVED at http://www.playstation.net,us
+2026-02-23T20:28:28.699Z,media-amazon.com,internal,Error: net::ERR_NAME_NOT_RESOLVED at http://www.media-amazon.com,us
+2026-02-23T20:28:29.403Z,openx.net,http,404,us
+2026-02-23T20:28:50.505Z,telegraph.co.uk,http,402,us
+2026-02-23T20:28:51.443Z,wsj.com,http,401,us
+2026-02-23T20:29:23.212Z,bloomberg.com,http,403,us
+2026-02-23T20:29:26.450Z,epicgames.com,http,403,us
+2026-02-23T20:29:28.185Z,aliyuncs.com,http,404,us
+2026-02-23T20:29:38.715Z,wa.me,internal,"AbandonedError: The analyzer was abandoned, probably due to inactivity",us
+2026-02-23T20:29:49.405Z,unsplash.com,http,401,us
+2026-02-23T20:29:56.014Z,tiktokv.us,internal,Error: net::ERR_NAME_NOT_RESOLVED at http://www.tiktokv.us,us
+2026-02-23T20:30:01.055Z,indeed.com,http,403,us
+2026-02-23T20:30:09.339Z,jsdelivr.net,internal,TimeoutError: Navigation timeout of 90000 ms exceeded,us
+2026-02-23T20:30:14.969Z,pixabay.com,http,403,us
+2026-02-23T20:30:41.808Z,quora.com,http,403,us
+2026-02-23T20:30:57.146Z,azurefd.net,http,404,us
+2026-02-23T20:31:07.248Z,azureedge.net,http,504,us
+2026-02-23T20:31:21.586Z,independent.co.uk,internal,TimeoutError: Navigation timeout of 90000 ms exceeded,us
+2026-02-23T20:31:33.869Z,shalltry.com,http,403,us
+2026-02-23T20:31:35.860Z,allawnos.com,internal,Error: net::ERR_NAME_NOT_RESOLVED at http://www.allawnos.com,us
+2026-02-23T20:31:39.227Z,akamaized.net,internal,Error: net::ERR_NAME_NOT_RESOLVED at http://www.akamaized.net,us
+2026-02-23T20:31:47.742Z,edgesuite.net,http,400,us
+2026-02-23T20:32:11.994Z,list-manage.com,internal,TimeoutError: Navigation timeout of 90000 ms exceeded,us
+2026-02-23T20:32:26.477Z,walmart.com,internal,TypeError: Cannot read properties of undefined (reading 'length'),us
+2026-02-23T20:32:28.357Z,ietf.org,http,403,us
+2026-02-23T20:32:57.497Z,globo.com,internal,TimeoutError: Navigation timeout of 90000 ms exceeded,us
+2026-02-23T20:32:59.884Z,alicdn.com,internal,TimeoutError: Navigation timeout of 90000 ms exceeded,us
+2026-02-23T20:33:00.430Z,2mdn.net,internal,Error: net::ERR_NAME_NOT_RESOLVED at http://www.2mdn.net,us
+2026-02-23T20:33:12.110Z,tandfonline.com,http,403,us
+2026-02-23T20:33:16.985Z,bsky.app,http,403,us
+2026-02-23T20:33:24.109Z,tripadvisor.com,http,403,us
+2026-02-23T20:33:41.429Z,kwai-pro.com,internal,"AbandonedError: The analyzer was abandoned, probably due to inactivity",us
+2026-02-23T20:34:25.434Z,azurewebsites.net,internal,Error: net::ERR_NAME_NOT_RESOLVED at http://www.azurewebsites.net,us
+2026-02-23T20:34:44.711Z,bidswitch.net,internal,Error: net::ERR_NAME_NOT_RESOLVED at http://www.bidswitch.net,us
+2026-02-23T20:34:52.072Z,aboutads.info,internal,Error: net::ERR_TIMED_OUT at http://aboutads.info,us
+2026-02-23T20:34:54.687Z,sina.com.cn,internal,TimeoutError: Navigation timeout of 90000 ms exceeded,us
+2026-02-23T20:34:57.486Z,shutterstock.com,http,403,us
+2026-02-23T20:35:20.040Z,merriam-webster.com,internal,TypeError: Cannot read properties of undefined (reading 'length'),us
+2026-02-23T20:35:33.300Z,accuweather.com,internal,TimeoutError: Navigation timeout of 90000 ms exceeded,us
+2026-02-23T20:35:37.975Z,cambridge.org,http,403,us
+2026-02-23T20:35:47.402Z,fandom.com,http,403,us
+2026-02-23T20:35:48.352Z,agkn.com,http,404,us
+2026-02-23T20:35:53.429Z,zillow.com,http,403,us
+2026-02-23T20:35:54.622Z,heylink.me,http,403,us
+2026-02-23T20:36:41.069Z,wildberries.ru,http,498,us
+2026-02-23T20:36:41.408Z,mdpi.com,http,403,us
+2026-02-23T20:36:50.631Z,fiverr.com,http,403,us
+2026-02-23T20:36:53.014Z,liadm.com,internal,Error: net::ERR_NAME_NOT_RESOLVED at http://www.liadm.com,us
+2026-02-23T20:37:14.143Z,curseforge.com,http,403,us
+2026-02-23T20:37:18.811Z,allaboutcookies.org,http,403,us
+2026-02-23T20:37:24.592Z,ozon.ru,http,403,us
+2026-02-23T20:37:34.797Z,avast.com,internal,TypeError: Cannot read properties of undefined (reading 'length'),us
+2026-02-23T20:37:40.021Z,creativecdn.com,internal,Error: net::ERR_ABORTED at http://creativecdn.com,us
+2026-02-23T20:38:57.685Z,33across.com,http,403,us
+2026-02-23T20:39:00.068Z,fda.gov,http,404,us
+2026-02-23T20:39:23.420Z,webmd.com,internal,TimeoutError: Navigation timeout of 90000 ms exceeded,us
+2026-02-23T20:39:33.498Z,githubusercontent.com,http,500,us
+2026-02-23T20:39:38.944Z,everesttech.net,internal,TimeoutError: Navigation timeout of 90000 ms exceeded,us
+2026-02-23T20:39:42.343Z,pexels.com,http,403,us
+2026-02-23T20:40:06.562Z,hm.com,http,403,us
+2026-02-23T20:40:18.536Z,mlb.com,internal,Error: Page crashed!,us
+2026-02-23T20:40:20.023Z,recaptcha.net,http,404,us
+2026-02-23T20:40:29.850Z,iso.org,http,403,us
+2026-02-23T20:40:35.173Z,kickstarter.com,http,403,us
+2026-02-23T20:40:42.573Z,criteo.net,internal,Error: net::ERR_NAME_NOT_RESOLVED at http://www.criteo.net,us
+2026-02-23T20:40:50.006Z,adjust.com,http,429,us
+2026-02-23T20:40:58.375Z,grammarly.io,internal,Error: net::ERR_NAME_NOT_RESOLVED at http://www.grammarly.io,us
+2026-02-23T20:41:22.278Z,yieldmo.com,internal,TimeoutError: Navigation timeout of 90000 ms exceeded,us
+2026-02-23T20:41:50.435Z,mckinsey.com,internal,TimeoutError: Navigation timeout of 90000 ms exceeded,us
+2026-02-23T20:41:53.903Z,omnitagjs.com,internal,Error: net::ERR_NAME_NOT_RESOLVED at http://www.omnitagjs.com,us
+2026-02-23T20:42:26.793Z,imrworldwide.com,internal,Error: net::ERR_NAME_NOT_RESOLVED at http://www.imrworldwide.com,us
+2026-02-23T20:42:34.243Z,quizlet.com,http,403,us
+2026-02-23T20:42:45.691Z,akamaihd.net,internal,Error: net::ERR_NAME_NOT_RESOLVED at http://www.akamaihd.net,us
+2026-02-23T20:42:59.571Z,corriere.it,internal,TimeoutError: Navigation timeout of 90000 ms exceeded,us
+2026-02-23T20:43:20.997Z,sentinelone.net,internal,TimeoutError: Navigation timeout of 90000 ms exceeded,us
+2026-02-23T20:43:45.068Z,bol.com,http,403,us
+2026-02-23T20:44:02.477Z,coupang.com,http,403,us
+2026-02-23T20:44:05.915Z,redfin.com,http,405,us
+2026-02-23T20:44:07.693Z,linklist.bio,internal,"AbandonedError: The analyzer was abandoned, probably due to inactivity",us
+2026-02-23T20:44:23.133Z,wbx2.com,internal,TimeoutError: Navigation timeout of 90000 ms exceeded,us
+2026-02-23T20:44:26.832Z,run.app,http,404,us
+2026-02-23T20:44:28.421Z,fbsbx.com,http,404,us
+2026-02-23T20:44:40.068Z,microsoftpersonalcontent.com,internal,Error: net::ERR_NAME_NOT_RESOLVED at http://www.microsoftpersonalcontent.com,us
+2026-02-23T20:44:41.124Z,flipkart.com,http,403,us
+2026-02-23T20:44:43.989Z,nexusmods.com,http,403,us
+2026-02-23T20:44:44.745Z,kohls.com,http,403,us
+2026-02-23T20:45:04.345Z,newsweek.com,internal,TimeoutError: Navigation timeout of 90000 ms exceeded,us
+2026-02-23T20:45:28.843Z,box.com,http,403,us
+2026-02-23T20:45:32.907Z,anydesk.com,http,403,us
+2026-02-23T20:45:37.679Z,samsungapps.com,internal,ReferenceError: gatherer is not defined,us
+2026-02-23T20:45:38.775Z,oraclecloud.com,http,403,us
+2026-02-23T20:45:50.373Z,businesswire.com,http,403,us
+2026-02-23T20:46:08.974Z,columbia.edu,http,403,us
+2026-02-23T20:46:11.493Z,moneycontrol.com,internal,TimeoutError: Navigation timeout of 90000 ms exceeded,us
+2026-02-23T20:46:24.123Z,huffingtonpost.com,internal,ReferenceError: gatherer is not defined,us
+2026-02-23T20:46:37.440Z,leboncoin.fr,http,403,us
+2026-02-23T20:47:42.985Z,hltv.org,http,403,us
+2026-02-23T20:48:09.491Z,forter.com,internal,ReferenceError: gatherer is not defined,us
+2026-02-23T20:48:10.638Z,nu.nl,http,403,us
+2026-02-23T20:48:12.466Z,archiveofourown.org,internal,TimeoutError: Navigation timeout of 90000 ms exceeded,us
+2026-02-23T20:48:14.447Z,myqcloud.com,internal,Error: net::ERR_NAME_NOT_RESOLVED at http://www.myqcloud.com,us
+2026-02-23T20:48:25.440Z,economist.com,http,403,us
+2026-02-23T20:48:30.950Z,umich.edu,http,403,us
+2026-02-23T20:48:33.419Z,msftauth.net,internal,Error: net::ERR_NAME_NOT_RESOLVED at http://www.msftauth.net,us
+2026-02-23T20:48:33.708Z,bet365.com,http,403,us
+2026-02-23T20:48:34.426Z,docomo.ne.jp,internal,TimeoutError: Navigation timeout of 90000 ms exceeded,us
+2026-02-23T20:48:58.559Z,india.com,internal,TimeoutError: Navigation timeout of 90000 ms exceeded,us
+2026-02-23T20:49:03.619Z,espncricinfo.com,internal,ReferenceError: gatherer is not defined,us
+2026-02-23T20:49:33.583Z,oxylabs.io,internal,TypeError: Cannot read properties of undefined (reading 'length'),us
+2026-02-23T20:49:50.119Z,ad.nl,http,403,us
+2026-02-23T20:49:50.609Z,spankbang.com,http,403,us
+2026-02-23T20:51:02.361Z,kwcdn.com,internal,Error: net::ERR_NAME_NOT_RESOLVED at http://www.kwcdn.com,us
+2026-02-23T20:51:02.378Z,makemytrip.com,http,403,us
+2026-02-23T20:51:14.587Z,i18n-pglstatp.com,internal,Error: net::ERR_NAME_NOT_RESOLVED at http://www.i18n-pglstatp.com,us
+2026-02-23T20:51:35.811Z,apkpure.net,http,403,us
+2026-02-23T20:51:36.682Z,idealista.com,http,403,us
+2026-02-23T20:51:36.780Z,livedoor.jp,http,403,us
+2026-02-23T20:51:52.611Z,usnews.com,internal,TimeoutError: Navigation timeout of 90000 ms exceeded,us
+2026-02-23T20:51:53.139Z,hln.be,http,403,us
+2026-02-23T20:52:25.616Z,kicker.de,http,403,us
+2026-02-23T20:52:40.049Z,odoo.com,http,403,us
+2026-02-23T20:52:44.265Z,jusbrasil.com.br,http,403,us
+2026-02-23T20:52:44.405Z,autotrader.co.uk,http,403,us
+2026-02-23T20:52:45.317Z,fanfiction.net,internal,TimeoutError: Navigation timeout of 90000 ms exceeded,us
+2026-02-23T20:52:46.566Z,merkur.de,internal,TimeoutError: Navigation timeout of 90000 ms exceeded,us
+2026-02-23T20:52:48.380Z,janitorai.com,http,403,us
+2026-02-23T20:52:49.314Z,sahibinden.com,http,403,us
+2026-02-23T20:53:06.829Z,ebay.it,internal,TimeoutError: Navigation timeout of 90000 ms exceeded,us
+2026-02-23T20:53:07.692Z,donmai.us,http,404,us
+2026-02-23T20:53:15.584Z,8lyyu1vb4.com,internal,Error: net::ERR_NAME_NOT_RESOLVED at http://www.8lyyu1vb4.com,us
+2026-02-23T20:53:23.401Z,justdial.com,http,403,us
+2026-02-23T20:53:54.211Z,missav.ws,http,403,us
+2026-02-23T20:54:07.479Z,boyfriendtv.com,http,403,us
+2026-02-23T20:54:15.137Z,apple.news,internal,NullError: Response was null,us
+2026-02-23T20:54:18.629Z,bookmyshow.com,http,403,us
+2026-02-23T20:54:25.346Z,dbankcloud.cn,internal,TimeoutError: Navigation timeout of 90000 ms exceeded,us
+2026-02-23T20:55:00.910Z,leroymerlin.fr,http,403,us
+2026-02-23T20:55:01.550Z,skroutz.gr,http,403,us
+2026-02-23T20:55:04.269Z,bookmark.xxx,http,451,us
+2026-02-23T20:55:24.489Z,jalan.net,http,503,us
+2026-02-23T20:55:26.975Z,zozo.jp,http,403,us
+2026-02-23T20:55:28.410Z,hollywoodbets.net,http,403,us
+2026-02-23T20:55:37.560Z,oecd.org,http,403,us
+2026-02-23T20:55:39.656Z,cityheaven.net,http,403,us
+2026-02-23T20:55:42.803Z,hilton.com,http,403,us
+2026-02-23T20:55:46.985Z,idealista.it,http,403,us
+2026-02-23T20:55:56.987Z,cm65.com,internal,Error: net::ERR_NAME_NOT_RESOLVED at http://www.cm65.com,us
+2026-02-23T20:56:10.929Z,prom.ua,http,429,us
+2026-02-23T20:56:11.969Z,p2yn.com,internal,Error: net::ERR_NAME_NOT_RESOLVED at http://www.p2yn.com,us
+2026-02-23T20:56:15.376Z,trello.com,internal,TypeError: Cannot read properties of undefined (reading 'length'),us
+2026-02-23T20:56:16.627Z,tsyndicate.com,internal,Error: net::ERR_ABORTED at http://tsyndicate.com,us
+2026-02-23T20:56:45.218Z,uidai.gov.in,internal,TimeoutError: Navigation timeout of 90000 ms exceeded,us
+2026-02-23T20:56:55.647Z,gcdn.co,internal,Error: net::ERR_EMPTY_RESPONSE at http://gcdn.co,us
+2026-02-23T20:56:57.728Z,suumo.jp,internal,TimeoutError: Navigation timeout of 90000 ms exceeded,us
+2026-02-23T20:57:07.716Z,1mg.com,http,403,us
+2026-02-23T20:57:08.319Z,dkitrxmdwoqruvsi.net,internal,Error: net::ERR_NAME_NOT_RESOLVED at http://www.dkitrxmdwoqruvsi.net,us
+2026-02-23T20:57:09.547Z,byteoversea.com,internal,Error: net::ERR_NAME_NOT_RESOLVED at http://www.byteoversea.com,us
+2026-02-23T20:57:16.276Z,x3os.com,internal,Error: net::ERR_NAME_NOT_RESOLVED at http://www.x3os.com,us
+2026-02-23T20:57:20.440Z,banvenez.com,internal,Error: net::ERR_NAME_NOT_RESOLVED at http://www.banvenez.com,us
+2026-02-23T20:57:24.031Z,fmkorea.com,http,430,us
+2026-02-23T20:58:59.248Z,livehindustan.com,internal,TimeoutError: Navigation timeout of 90000 ms exceeded,us
+2026-02-23T20:59:03.003Z,hanime1.me,http,403,us
+2026-02-23T20:59:10.772Z,luxuretv.com,http,403,us
+2026-02-23T20:59:12.229Z,up.gov.in,internal,TimeoutError: Navigation timeout of 90000 ms exceeded,us
+2026-02-23T20:59:12.803Z,mangabuff.ru,http,403,us
+2026-02-23T20:59:16.098Z,missav.ai,http,403,us
+2026-02-23T20:59:30.763Z,shahvani.com,http,403,us
+2026-02-23T20:59:36.192Z,supjav.com,http,403,us
+2026-02-23T20:59:38.299Z,upmusics.com,internal,Error: net::ERR_INVALID_REDIRECT at http://upmusics.com,us
+2026-02-23T20:59:40.804Z,wnacg.com,http,403,us
+2026-02-23T20:59:46.427Z,ptt.cc,internal,Error: net::ERR_CONNECTION_CLOSED at http://ptt.cc,us
+2026-02-23T20:59:47.813Z,bb2r.com,http,409,us
+2026-02-23T21:00:00.128Z,bato.to,internal,TimeoutError: Navigation timeout of 90000 ms exceeded,us
+2026-02-23T21:00:14.187Z,casinoplus.com.ph,http,403,us
+2026-02-23T21:00:26.629Z,ekstrabladet.dk,internal,TypeError: Cannot read properties of undefined (reading 'length'),us
+2026-02-23T21:00:26.821Z,cardmarket.com,http,403,us
+2026-02-23T21:00:41.539Z,bank.in,internal,Error: net::ERR_NAME_NOT_RESOLVED at http://www.bank.in,us
+2026-02-23T21:00:53.943Z,lk21official.cc,http,404,us
+2026-02-23T21:00:59.859Z,bato.si,http,523,us
+2026-02-23T21:01:04.244Z,lausd.net,internal,NullError: Response was null,us
+2026-02-23T21:01:54.222Z,manoramaonline.com,internal,TimeoutError: Navigation timeout of 90000 ms exceeded,us
+2026-02-23T21:01:54.223Z,goodreturns.in,internal,TimeoutError: Navigation timeout of 90000 ms exceeded,us
+2026-02-23T21:02:09.235Z,ppomppu.co.kr,internal,ReferenceError: gatherer is not defined,us
+2026-02-23T21:02:09.259Z,parivahan.gov.in,internal,TimeoutError: Navigation timeout of 90000 ms exceeded,us
+2026-02-23T21:02:18.099Z,bingoplus.com,http,403,us
+2026-02-23T21:03:16.711Z,skokka.com,http,403,us
+2026-02-23T21:03:18.075Z,myreadingmanga.info,http,403,us
+2026-02-23T21:03:25.813Z,arabtnt.com,http,403,us
+2026-02-23T21:03:31.676Z,24xxxx.win,internal,Error: net::ERR_NAME_NOT_RESOLVED at http://www.24xxxx.win,us
+2026-02-23T21:03:45.709Z,googll.store,http,403,us
+2026-02-23T21:03:49.436Z,eroterest.net,internal,Error: net::ERR_NAME_NOT_RESOLVED at http://www.eroterest.net,us
+2026-02-23T21:03:49.674Z,happymh.com,http,403,us
+2026-02-23T21:03:55.248Z,lectormangaa.com,http,403,us
+2026-02-23T21:03:58.247Z,listcrawler.eu,http,403,us
+2026-02-23T21:04:34.259Z,bt.dk,internal,TypeError: Cannot read properties of undefined (reading 'length'),us
+2026-02-23T21:05:25.427Z,manhwaweb.com,internal,TimeoutError: Navigation timeout of 90000 ms exceeded,us
+2026-02-23T21:08:44.414Z,kamababa.desi,internal,"AbandonedError: The analyzer was abandoned, probably due to inactivity",us
